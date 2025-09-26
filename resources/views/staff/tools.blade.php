@@ -14,11 +14,17 @@
 
             <!-- Links -->
             <div class="flex space-x-6">
-                <a href="#" class="text-gray-700 hover:text-blue-600 transition font-medium">Dashboard</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 transition font-medium">Tasks</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 transition font-medium">Messages</a>
+                <a href="{{ route('staff.dashboard') }}" class="text-gray-700 hover:text-blue-600 transition font-medium">Dashboard</a>
+                <a href="{{ route('staff.tasks') }}" class="text-gray-700 hover:text-blue-600 transition font-medium">Tasks</a>
+                <a href="{{ route('staff.messages.inbox') }}" class="text-gray-700 hover:text-blue-600 transition font-medium">Messages</a>
                 <a href="#" class="text-gray-700 hover:text-blue-600 transition font-medium">Profile</a>
             </div>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="{{ route('staff.messages.inbox') }}">
+                    <i class="bi bi-envelope"></i> Messages
+                </a>
+            </li> -->
+
 
             <!-- Right Side (Logout) -->
             <div>
@@ -54,7 +60,7 @@
                     <h2 class="text-lg font-semibold text-gray-800">Dashboard</h2>
                 </div>
                 <p class="text-gray-600 mb-6 text-sm flex-grow">Monitor key metrics and team analytics.</p>
-                <a href="#" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-blue-700 transition">
+                <a href="{{ route('staff.dashboard') }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-blue-700 transition">
                     Go to Dashboard
                 </a>
             </div>
@@ -68,7 +74,7 @@
                     <h2 class="text-lg font-semibold text-gray-800">Task Manager</h2>
                 </div>
                 <p class="text-gray-600 mb-6 text-sm flex-grow">Organize and track your tasks efficiently.</p>
-                <a href="#" class="inline-block bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-green-700 transition">
+                <a href="{{ route('staff.tasks') }}" class="inline-block bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-green-700 transition">
                     Manage Tasks
                 </a>
             </div>
@@ -82,7 +88,7 @@
                     <h2 class="text-lg font-semibold text-gray-800">Messages</h2>
                 </div>
                 <p class="text-gray-600 mb-6 text-sm flex-grow">Stay connected with team updates.</p>
-                <a href="#" class="inline-block bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-purple-700 transition">
+                <a href="{{ route('staff.messages.inbox') }}" class="inline-block bg-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium text-center hover:bg-purple-700 transition">
                     View Messages
                 </a>
             </div>

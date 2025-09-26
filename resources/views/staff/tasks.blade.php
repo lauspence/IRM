@@ -41,9 +41,33 @@
                             <span class="badge bg-secondary">Unknown</span>
                         @endif
                     </td>
+                    <td>
+                        {{-- Mark as Completed --}}
+                        @if($task->status !== 'completed')
+                            <form action="{{ route('tasks.complete', $task->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-sm btn-success">✔ Complete</button>
+                            </form>
+                        @endif
+
+                        {{-- Edit --}}
+                        <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-sm btn-primary">✏ Edit</a>
+
+                        {{-- Delete --}}
+                        <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-danger" 
+                                    onclick="return confirm('Are you sure you want to delete this task?');">
+                                🗑 Delete
+                            </button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
+
         </table>
     @endif
 </div>
